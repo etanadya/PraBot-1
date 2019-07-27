@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     ProgressDialog pDialog;
     Button btnLogin;
-    EditText etUsername, etPassword;
+    EditText etUsername, edtPassword;
 
 
     int success;
@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById( R.id.btn_login );
 
         etUsername = findViewById( R.id.edt_username );
-        etPassword =findViewById( R.id.edt_password );
+        edtPassword =findViewById( R.id.edt_password );
 
         // Cek session login jika TRUE maka langsung buka MainActivity
         sharedpreferences = getSharedPreferences( my_shared_preferences, Context.MODE_PRIVATE );
@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 String username = etUsername.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
+                String password = edtPassword.getText().toString().trim();
 
                 // mengecek kolom yang kosong
                 if (username.trim().length() > 0 && password.trim().length() > 0) {

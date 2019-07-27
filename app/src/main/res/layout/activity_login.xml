@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@color/colorAccent"
     android:gravity="center"
     android:paddingLeft="40dp"
     android:paddingRight="40dp"
@@ -41,62 +41,72 @@
         android:src="@drawable/ic_account_circle_black_24dp" />
 
     <LinearLayout
+        android:id="@+id/layout_text_username"
+        android:layout_below="@id/img_account"
+        android:weightSum="2"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/img_account"
-        android:layout_marginTop="25dp"
-        android:orientation="vertical">
-
-        <android.support.design.widget.TextInputLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp">
+        <ImageView
+            android:src="@drawable/ic_username"
+            android:layout_weight="1"
+            android:layout_width="70dp"
+            android:layout_height="50dp" />
+        <EditText
+            android:id="@+id/edt_username"
+            android:hint="Username"
+            android:textColor="@color/colorBlack"
+            android:inputType="textPersonName"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorBrown"
-            android:hint="@string/username"
-            android:textColorHint="@color/colorWhite">
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/edt_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:drawableStart="@drawable/ic_email_white_45dp"
-                android:textColor="@color/colorWhite"
-                android:textColorHighlight="@color/colorWhite"
-                android:textColorHint="@color/colorWhite" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
+    <LinearLayout
+        android:id="@+id/layout_password"
+        android:layout_below="@id/layout_text_username"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp">
+        <ImageView
+            android:src="@drawable/ic_password"
+            android:layout_weight="1"
+            android:layout_width="70dp"
+            android:layout_height="50dp" />
+        <EditText
+            android:id="@+id/edt_password"
+            android:hint="Password"
+            android:textColor="@color/colorBlack"
+            android:inputType="textPassword"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="@color/colorBrown"
-            android:textColorHint="@color/colorWhite"
-            app:passwordToggleEnabled="true">
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/edt_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_lock_white_45dp"
-                android:hint="@string/pass"
-                android:inputType="textPassword"
-                android:textColor="@color/colorWhite"
-                android:textColorHighlight="@color/colorWhite"
-                android:textColorHint="@color/colorWhite" />
-        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_login"
+            android:layout_below="@id/layout_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:background="@color/colorBrownDark"
             android:text="@string/login"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
             android:textStyle="bold" />
-    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/loading_in"
